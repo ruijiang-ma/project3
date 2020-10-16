@@ -3,7 +3,8 @@ public class BusinessCustomer extends Customer {
     BusinessCustomer(String n){
         this.name = n;
     }
-    // Check if there are enough rolls for business customers.
+    // To check if there are enough rolls for business customers.
+    //Business customers will buy 10 rolls, two of each type.
     //A business customer will only take their order if it is filled exactly as requested, otherwise, they will not make a purchase.
     private Boolean ableToAccommodate() {
 
@@ -25,26 +26,28 @@ public class BusinessCustomer extends Customer {
         }
 
         else if(ableToAccommodate()) {
-
+            
+            //Spring roll
             customerOrder[0] = new SpringRoll();
             customerOrder[1] = new SpringRoll();
-
-
             Store.inventory.put("springRoll",Store.inventory.get("springRoll") - 2);
-
+            
+            //Egg roll
             customerOrder[2] = new EggRoll();
             customerOrder[3] = new EggRoll();
             Store.inventory.put("eggRoll",Store.inventory.get("eggRoll") - 2);
-
+            
+            //Pastry roll
             customerOrder[4] = new PastryRoll();
             customerOrder[5] = new PastryRoll();
             Store.inventory.put("pastryRoll",Store.inventory.get("pastryRoll") - 2);
-
+            
+            //Sausage roll
             customerOrder[6] = new SausageRoll();
             customerOrder[7] = new SausageRoll();
-
             Store.inventory.put("sausageRoll",Store.inventory.get("sausageRoll") - 2);
-
+            
+            //jelly roll
             customerOrder[8] = new JellyRoll();
             customerOrder[9] = new JellyRoll();
             Store.inventory.put("jellyRoll",Store.inventory.get("jellyRoll") - 2);
@@ -64,7 +67,7 @@ public class BusinessCustomer extends Customer {
                 if (customerOrder[i].getName() == "Sausage Roll") { this.numSausage+=1; }
                 if (customerOrder[i].getName() == "Spring Roll") { this.numSpr+=1; }
 
-                //Calculate the total cost of the order
+                //To calculate the total cost of the order
                 totalCost+=customerOrder[i].getPrice();
                 String str = String.format("%.02f", customerOrder[i].getPrice());
                 System.out.println(this.getName() + " the " + this.getClass().getSimpleName() + " purchased a " + customerOrder[i].getName() + " with "
