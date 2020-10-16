@@ -29,7 +29,7 @@ public abstract class Customer{
             if (customerOrder[i].getName() == "Sausage Roll") { this.numSausage+=1; }
             if (customerOrder[i].getName() == "Spring Roll") { this.numSpr+=1; }
 
-
+            //To calculate the cost of each order
             totalCost+=customerOrder[i].getPrice();
             String str = String.format("%.02f", customerOrder[i].getPrice());
             System.out.println(this.getName() + " the " + this.getClass().getSimpleName() + " purchased a " + customerOrder[i].getName() + " with "
@@ -44,7 +44,7 @@ public abstract class Customer{
     public int getSoldOut(){ return this.soldOut; }
 
 
-
+    //
     public int[] shuffleArray() {
 
         int[] array = { 1, 2, 3, 4, 5};
@@ -60,7 +60,7 @@ public abstract class Customer{
         return array;
     }
 
-    
+    //To check the number left of each type of rolls.
     public Boolean canBuy(String name, int numRolls) {
         
         Boolean bool = false;
