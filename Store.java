@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class Store {
 
-    private final int LIMIT = 30;
+    private final int LIMIT = 60;
     private Customer[] customers;
     public static HashMap<String, Integer> inventory = new HashMap<String, Integer>();
     public static Boolean nothingLeft = false;
@@ -11,7 +11,7 @@ public class Store {
 
     public Store(int day) {
 
-        System.out.println("******** Welcome to our 4448 Roll store. ********\n");
+        System.out.println("-------------------------------- Welcome to our 4448 Roll store. --------------------------------\n");
         inventory.put("springRoll", LIMIT);
         inventory.put("eggRoll", LIMIT);
         inventory.put("pastryRoll",LIMIT);
@@ -20,9 +20,10 @@ public class Store {
 
         for(int i=1 ; i <= day ; i++) {
 
-            System.out.println("******** Today is Day " + i + ". ********\n");
+            System.out.println("-------------------------------- Today is Day " + i + ". --------------------------------");
             this.setInventory();
             counter.printInventory();
+            System.out.println("-------------------------------- DAILY SUMMARY: --------------------------------");
             counter.resetDaily();
 
             CustomerFactory factory = new CustomerFactory();
@@ -32,7 +33,7 @@ public class Store {
             counter.printSales();
             counter.printInventory();
 
-            System.out.println("\n******** End of Day " + i + ". ********\n");
+            System.out.println("-------------------------------- End of Day " + i + ". --------------------------------\n\n\n\n\n\n");
         }
         counter.printAllTimeSale();
     }

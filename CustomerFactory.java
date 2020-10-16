@@ -39,7 +39,7 @@ public class CustomerFactory{
     }
 
 
-    public Customer[] createCustomer()
+    public static Customer[] createCustomer()
     {
         Random rand = new Random();
         int numCasual = rand.nextInt(12) + 1;

@@ -1,17 +1,16 @@
 public class BusinessCustomer extends Customer {
 
-    BusinessCustomer(String n){
-        this.name = n;
-    }
+    BusinessCustomer(String name){
 
+        this.name = name;
+    }
 
     private Boolean ableToAccommodate() {
 
-        Boolean able = true;
-        if(Store.inventory.get("springRoll") < 2 || Store.inventory.get("eggRoll") < 2 || Store.inventory.get("pastryRoll") < 2 || Store.inventory.get("sausageRoll") < 2 || Store.inventory.get("jellyRoll")<2) { able = false; }
-        return able;
+        Boolean bool = true;
+        if( Store.inventory.get("springRoll") < 2 || Store.inventory.get("eggRoll") < 2 || Store.inventory.get("pastryRoll") < 2 || Store.inventory.get("sausageRoll") < 2 || Store.inventory.get("jellyRoll")<2) { bool = false; }
+        return bool;
     }
-
 
     public void buy(int num) {
 
@@ -51,29 +50,13 @@ public class BusinessCustomer extends Customer {
 
         }
 
+
     }
     public void print(){
 
         if (customerOrder[9] != null) {
-
-            for (int i = 0; i < customerOrder.length; i++) {
-
-                if (customerOrder[i].getName() =="Egg Roll") { this.numEgg+=1; }
-                if (customerOrder[i].getName() == "Jelly Roll") { this.numJelly+=1; }
-                if (customerOrder[i].getName() == "Pastry Roll") { this.numPastry+=1; }
-                if (customerOrder[i].getName() == "Sausage Roll") { this.numSausage+=1; }
-                if (customerOrder[i].getName() == "Spring Roll") { this.numSpr+=1; }
-
-
-                totalCost+=customerOrder[i].getPrice();
-                String str = String.format("%.02f", customerOrder[i].getPrice());
-                System.out.println(this.getName() + " the " + this.getClass().getSimpleName() + " purchased a " + customerOrder[i].getName() + " with "
-                        + customerOrder[i].getSauceNum() + " sauce(s), " + customerOrder[i].fillingNum +
-                        " filling(s), and " + customerOrder[i].getToppingNum() + " topping(s) for $" + str+" dollars.");
-
-            }
+            printFun(customerOrder.length);
         }
-        String str = String.format("%.02f", totalCost);
-        System.out.println("The total cost for this order is: $" + str + " dollars.");
+
     }
 }

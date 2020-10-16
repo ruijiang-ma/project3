@@ -15,8 +15,6 @@ public class CateringCustomer extends Customer {
             int[] array = shuffleArray();
                 if (array[0] == 1 || array[1] == 1 || array[2] == 1) {
 
-                    //Spring Roll
-                    System.out.println(this.getName() + " wants a Spring Roll.");
                     if (canBuy("Spring Roll", 5)) {
 
                         customerOrder[index++] = new SpringRoll();
@@ -56,7 +54,6 @@ public class CateringCustomer extends Customer {
                 }
                 if (array[0] == 2 || array[1] == 2 || array[2] == 2) {
                     //Egg Roll
-                    System.out.println(this.getName() + " wants an Egg Roll.");
                     if (canBuy("Egg Roll", 5)) {
                         customerOrder[index++] = new EggRoll();
                         customerOrder[index++] = new EggRoll();
@@ -86,8 +83,7 @@ public class CateringCustomer extends Customer {
 
                 }
                 if (array[0] == 3 || array[1] == 3 || array[2] == 3) {
-                    //Pastry Roll
-                    System.out.println(this.getName() + " wants a Pastry Roll.");
+
                     if (canBuy("Pastry Roll", 5)) {
                         customerOrder[index++] = new PastryRoll();
                         customerOrder[index++] = new PastryRoll();
@@ -118,8 +114,7 @@ public class CateringCustomer extends Customer {
 
                 }
                 if (array[0] == 4 || array[1] == 4 || array[2] == 4) {
-                    //Sausage Roll
-                    System.out.println(this.getName() + " wants a Sausage Roll.");
+
                     if (canBuy("Sausage Roll", 5)) {
                         customerOrder[index++] = new SausageRoll();
                         customerOrder[index++] = new SausageRoll();
@@ -150,8 +145,7 @@ public class CateringCustomer extends Customer {
 
                 }
                 if (array[0] == 5 || array[1] == 5 || array[2] == 5) {
-                    //Jelly Roll
-                    System.out.println(getName() + " wants a Jelly Roll.");
+
                     if (canBuy("Jelly Roll", 5)) {
                         customerOrder[index++] = new JellyRoll();
                         customerOrder[index++] = new JellyRoll();
@@ -179,9 +173,6 @@ public class CateringCustomer extends Customer {
                         Store.inventory.put("jellyRoll", Store.inventory.get("jellyRoll") - 1);
                     }
                 }
-           // }
-            System.out.println(customerOrder.length);
-            System.out.println(index);
         }
         else {
             soldOut++;
@@ -190,22 +181,6 @@ public class CateringCustomer extends Customer {
     }
     public void print(){
 
-        for (int i = 0; i < index; i++) {
-
-            if (customerOrder[i].getName() =="Egg Roll") { this.numEgg+=1; }
-            if (customerOrder[i].getName() == "Jelly Roll") { this.numJelly+=1; }
-            if (customerOrder[i].getName() == "Pastry Roll") { this.numPastry+=1; }
-            if (customerOrder[i].getName() == "Sausage Roll") { this.numSausage+=1; }
-            if (customerOrder[i].getName() == "Spring Roll") { this.numSpr+=1; }
-
-            totalCost+=customerOrder[i].getPrice();
-            String str = String.format("%.02f", customerOrder[i].getPrice());
-            System.out.println(this.getName() + " the " + this.getClass().getSimpleName() + " Bought a " + customerOrder[i].getName() + " with "
-                    + customerOrder[i].getSauceNum() + " sauce(s), " + customerOrder[i].fillingNum +
-                    " filling(s), and " + customerOrder[i].getToppingNum() + " topping(s) for $" + str+" dollars.");
-        }
-        String str = String.format("%.02f", totalCost);
-        System.out.println("total egg "+numEgg);
-        System.out.println("The total cost for this order is: $" + str + " dollars.");
+        printFun(index);
     }
 }

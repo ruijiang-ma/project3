@@ -20,6 +20,26 @@ public abstract class Customer{
     }
     public abstract void buy(int num);
     public abstract void print();
+    public void printFun(int num) {
+        for (int i = 0; i < num; i++) {
+
+            if (customerOrder[i].getName() =="Egg Roll") { this.numEgg+=1; }
+            if (customerOrder[i].getName() == "Jelly Roll") { this.numJelly+=1; }
+            if (customerOrder[i].getName() == "Pastry Roll") { this.numPastry+=1; }
+            if (customerOrder[i].getName() == "Sausage Roll") { this.numSausage+=1; }
+            if (customerOrder[i].getName() == "Spring Roll") { this.numSpr+=1; }
+
+
+            totalCost+=customerOrder[i].getPrice();
+            String str = String.format("%.02f", customerOrder[i].getPrice());
+            System.out.println(this.getName() + " the " + this.getClass().getSimpleName() + " purchased a " + customerOrder[i].getName() + " with "
+                    + customerOrder[i].getSauceNum() + " sauce(s), " + customerOrder[i].fillingNum +
+                    " filling(s), and " + customerOrder[i].getToppingNum() + " topping(s) for $" + str+" dollars.");
+        }
+        String str = String.format("%.02f", totalCost);
+        System.out.println("--------------------------------------------------------------------------------");
+        System.out.println("The total cost for this order is: $" + str + " dollars.\n");
+    }
     public double getTotalCost(){ return this.totalCost; }
     public int getSoldOut(){ return this.soldOut; }
 
@@ -43,33 +63,33 @@ public abstract class Customer{
     
     public Boolean canBuy(String name, int numRolls) {
         
-        Boolean x = false;
+        Boolean bool = false;
         if(name == "Egg Roll") {
             if (Store.inventory.get("eggRoll") - numRolls >= 0) {
-                x = true;
+                bool = true;
             }
         }
 
-        if (name =="Spring Roll") {
+        else if (name =="Spring Roll") {
             if(Store.inventory.get("springRoll")-numRolls >= 0){
-                x = true;
+                bool = true;
             }
         }
-        if(name =="Pastry Roll") {
+        else if(name =="Pastry Roll") {
             if(Store.inventory.get("pastryRoll")-numRolls >= 0) {
-                x = true;
+                bool = true;
             }
         }
-        if(name =="Sausage Roll"){
+        else if(name =="Sausage Roll"){
             if(Store.inventory.get("sausageRoll")-numRolls >= 0) {
-                x = true;
+                bool = true;
             }
         }
-        if(name =="Jelly Roll") {
+        else if(name =="Jelly Roll") {
             if(Store.inventory.get("jellyRoll")-numRolls >= 0) {
-                x = true;
+                bool = true;
             }
         }
-        return x;
+        return bool;
     }
 }
