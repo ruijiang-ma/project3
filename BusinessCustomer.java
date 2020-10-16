@@ -3,6 +3,7 @@ public class BusinessCustomer extends Customer {
     BusinessCustomer(String n){
         this.name = n;
     }
+    
     // To check if there are enough rolls for business customers.
     //Business customers will buy 10 rolls, two of each type.
     //A business customer will only take their order if it is filled exactly as requested, otherwise, they will not make a purchase.
