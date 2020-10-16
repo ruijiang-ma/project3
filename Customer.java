@@ -44,11 +44,12 @@ public abstract class Customer{
     public int getSoldOut(){ return this.soldOut; }
 
 
-    //Generate a random shuffled array that can be used as source of randomization
+    //Generate a random shuffled array that can be used as source of randomization.
     public int[] shuffleArray() {
 
         int[] array = { 1, 2, 3, 4, 5};
-
+        //shuffle elements in the array and pick randomly each time.
+        
         Random rand = new Random();
 
         for (int i = 0; i < array.length; i++) {
