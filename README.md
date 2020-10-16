@@ -10,4 +10,4 @@ IntelliJ IDEA
 #### Issues encountered during development:
 
 #### Any special instructions to run the application:
-No. To run our project, just hit the play button in IntelliJ IDEA, input the days you want for the Roll Store simulator to run, and then the outputs should be displayed in the output panel.
+Users can navigate to the main class, hit the play button in IntelliJ IDEA, and input the a number of days, then the outputs should be displayed in the output panel.
