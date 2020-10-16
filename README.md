@@ -2,7 +2,7 @@
 #### Team members:
 Ruijiang Ma chma2866@colorado.edu</br>Tongxin Zhu tozh3775@colorado.edu
 #### Language and environment:
-Jave</br>
+Java</br>
 IntelliJ IDEA
 #### Comments or assumptions made for development:
 
