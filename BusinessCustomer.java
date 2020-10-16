@@ -1,16 +1,17 @@
 public class BusinessCustomer extends Customer {
 
-    BusinessCustomer(String name){
-
-        this.name = name;
+    BusinessCustomer(String n){
+        this.name = n;
     }
-
+// Check if there are enough rolls for business customers.
+//A business customer will only take their order if it is filled exactly as requested, otherwise, they will not make a purchase.
     private Boolean ableToAccommodate() {
 
-        Boolean bool = true;
-        if( Store.inventory.get("springRoll") < 2 || Store.inventory.get("eggRoll") < 2 || Store.inventory.get("pastryRoll") < 2 || Store.inventory.get("sausageRoll") < 2 || Store.inventory.get("jellyRoll")<2) { bool = false; }
-        return bool;
+        Boolean able = true;
+        if(Store.inventory.get("springRoll") < 2 || Store.inventory.get("eggRoll") < 2 || Store.inventory.get("pastryRoll") < 2 || Store.inventory.get("sausageRoll") < 2 || Store.inventory.get("jellyRoll")<2) { able = false; }
+        return able;
     }
+
 
     public void buy(int num) {
 
@@ -50,13 +51,29 @@ public class BusinessCustomer extends Customer {
 
         }
 
-
     }
     public void print(){
 
         if (customerOrder[9] != null) {
-            printFun(customerOrder.length);
-        }
 
+            for (int i = 0; i < customerOrder.length; i++) {
+
+                if (customerOrder[i].getName() =="Egg Roll") { this.numEgg+=1; }
+                if (customerOrder[i].getName() == "Jelly Roll") { this.numJelly+=1; }
+                if (customerOrder[i].getName() == "Pastry Roll") { this.numPastry+=1; }
+                if (customerOrder[i].getName() == "Sausage Roll") { this.numSausage+=1; }
+                if (customerOrder[i].getName() == "Spring Roll") { this.numSpr+=1; }
+
+
+                totalCost+=customerOrder[i].getPrice();
+                String str = String.format("%.02f", customerOrder[i].getPrice());
+                System.out.println(this.getName() + " the " + this.getClass().getSimpleName() + " purchased a " + customerOrder[i].getName() + " with "
+                        + customerOrder[i].getSauceNum() + " sauce(s), " + customerOrder[i].fillingNum +
+                        " filling(s), and " + customerOrder[i].getToppingNum() + " topping(s) for $" + str+" dollars.");
+
+            }
+        }
+        String str = String.format("%.02f", totalCost);
+        System.out.println("The total cost for this order is: $" + str + " dollars.");
     }
 }
