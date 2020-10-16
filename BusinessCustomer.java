@@ -67,7 +67,7 @@ public class BusinessCustomer extends Customer {
                 if (customerOrder[i].getName() == "Sausage Roll") { this.numSausage+=1; }
                 if (customerOrder[i].getName() == "Spring Roll") { this.numSpr+=1; }
 
-                //To calculate the total cost of the order
+                //To calculate the total cost of the order.
                 totalCost+=customerOrder[i].getPrice();
                 String str = String.format("%.02f", customerOrder[i].getPrice());
                 System.out.println(this.getName() + " the " + this.getClass().getSimpleName() + " purchased a " + customerOrder[i].getName() + " with "
