@@ -44,7 +44,7 @@ public abstract class Customer{
     public int getSoldOut(){ return this.soldOut; }
 
 
-    //
+    //Generate a random shuffled array that can be used as source of randomization
     public int[] shuffleArray() {
 
         int[] array = { 1, 2, 3, 4, 5};
