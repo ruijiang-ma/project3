@@ -34,6 +34,7 @@ public class Store {
 
             System.out.println("\n******** End of Day " + i + ". ********\n");
         }
+        counter.printAllTimeSale();
     }
 
     public void setInventory() {

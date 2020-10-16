@@ -12,6 +12,7 @@ public abstract class Roll {
     protected int toppingNum;
     protected double totalPrice;
 
+
     public Roll(String name, double price) {
 
         Random rand = new Random();
@@ -30,6 +31,7 @@ public abstract class Roll {
     public int getSauceNum() { return sauceNum; }
 
     public int getToppingNum() { return toppingNum; }
+
 
     public double getPrice(){
 

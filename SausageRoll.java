@@ -6,6 +6,7 @@ public class SausageRoll extends Roll {
         this.fillingPrice = 2.00;
         this.saucePrice = 3.00;
         this.toppingPrice = 4.00;
+        this.sauceNum = 1;
     }
 
 }

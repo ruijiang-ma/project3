@@ -4,6 +4,7 @@ public class BusinessCustomer extends Customer {
         this.name = n;
     }
 
+
     private Boolean ableToAccommodate() {
 
         Boolean able = true;
@@ -56,6 +57,12 @@ public class BusinessCustomer extends Customer {
         if (customerOrder[9] != null) {
 
             for (int i = 0; i < customerOrder.length; i++) {
+
+                if (customerOrder[i].getName() =="Egg Roll") { this.numEgg+=1; }
+                if (customerOrder[i].getName() == "Jelly Roll") { this.numJelly+=1; }
+                if (customerOrder[i].getName() == "Pastry Roll") { this.numPastry+=1; }
+                if (customerOrder[i].getName() == "Sausage Roll") { this.numSausage+=1; }
+                if (customerOrder[i].getName() == "Spring Roll") { this.numSpr+=1; }
 
 
                 totalCost+=customerOrder[i].getPrice();

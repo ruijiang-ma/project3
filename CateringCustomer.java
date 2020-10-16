@@ -1,12 +1,9 @@
-import java.util.Random;
-
 public class CateringCustomer extends Customer {
 
     CateringCustomer(String n){
         this.name = n;
     }
 
-    public int index = 0;
 
     public void buy(int num) {
 
@@ -195,13 +192,20 @@ public class CateringCustomer extends Customer {
 
         for (int i = 0; i < index; i++) {
 
-            totalCost += customerOrder[i].getPrice();
+            if (customerOrder[i].getName() =="Egg Roll") { this.numEgg+=1; }
+            if (customerOrder[i].getName() == "Jelly Roll") { this.numJelly+=1; }
+            if (customerOrder[i].getName() == "Pastry Roll") { this.numPastry+=1; }
+            if (customerOrder[i].getName() == "Sausage Roll") { this.numSausage+=1; }
+            if (customerOrder[i].getName() == "Spring Roll") { this.numSpr+=1; }
+
+            totalCost+=customerOrder[i].getPrice();
             String str = String.format("%.02f", customerOrder[i].getPrice());
             System.out.println(this.getName() + " the " + this.getClass().getSimpleName() + " Bought a " + customerOrder[i].getName() + " with "
                     + customerOrder[i].getSauceNum() + " sauce(s), " + customerOrder[i].fillingNum +
                     " filling(s), and " + customerOrder[i].getToppingNum() + " topping(s) for $" + str+" dollars.");
         }
         String str = String.format("%.02f", totalCost);
+        System.out.println("total egg "+numEgg);
         System.out.println("The total cost for this order is: $" + str + " dollars.");
     }
 }

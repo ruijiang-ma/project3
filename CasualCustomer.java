@@ -1,11 +1,10 @@
-import java.util.Random;
-
 public class CasualCustomer extends Customer {
 
     CasualCustomer(String n){
         this.name = n;
     }
     public int index = 0;
+
 
     public void buy(int num) {
 
@@ -72,6 +71,12 @@ public class CasualCustomer extends Customer {
     public void print(){
 
         for (int i = 0; i < index; i++){
+
+            if (customerOrder[i].getName() =="Egg Roll") { this.numEgg+=1; }
+            if (customerOrder[i].getName() == "Jelly Roll") { this.numJelly+=1; }
+            if (customerOrder[i].getName() == "Pastry Roll") { this.numPastry+=1; }
+            if (customerOrder[i].getName() == "Sausage Roll") { this.numSausage+=1; }
+            if (customerOrder[i].getName() == "Spring Roll") { this.numSpr+=1; }
 
             totalCost+=customerOrder[i].getPrice();
             String str = String.format("%.02f", customerOrder[i].getPrice());

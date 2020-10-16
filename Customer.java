@@ -6,6 +6,14 @@ public abstract class Customer{
     public Roll[] customerOrder;
     public int rollsBought=0, soldOut;
     double totalCost = 0.0;
+
+    public int index = 0;
+    public int numEgg = 0;
+    public int numJelly = 0;
+    public int numPastry = 0;
+    public int numSpr = 0;
+    public int numSausage = 0;
+
     
     public String getName(){
         return name;
@@ -14,6 +22,7 @@ public abstract class Customer{
     public abstract void print();
     public double getTotalCost(){ return this.totalCost; }
     public int getSoldOut(){ return this.soldOut; }
+
 
 
     public int[] shuffleArray() {
