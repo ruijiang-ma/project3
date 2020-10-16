@@ -7,6 +7,8 @@ public class CateringCustomer extends Customer {
 
     public void buy(int num) {
 
+        //Catering customers will buy 5 rolls of 3 different types (15 total, type determined randomly). 
+        //A catering customer will take any number of available rolls of any available types up to a total of 15, if their original order cannot be placed. 
         int currentNumOfRolls = Store.inventory.get("springRoll") + Store.inventory.get("eggRoll") + Store.inventory.get("pastryRoll") + Store.inventory.get("sausageRoll") + Store.inventory.get("jellyRoll");
 
         if (currentNumOfRolls >= 1) {
@@ -14,9 +16,9 @@ public class CateringCustomer extends Customer {
             customerOrder = new Roll[num];
             int[] array = shuffleArray();
                 if (array[0] == 1 || array[1] == 1 || array[2] == 1) {
-
+                    //Spring roll
                     if (canBuy("Spring Roll", 5)) {
-
+                        
                         customerOrder[index++] = new SpringRoll();
                         customerOrder[index++] = new SpringRoll();
                         customerOrder[index++] = new SpringRoll();
@@ -53,7 +55,7 @@ public class CateringCustomer extends Customer {
                     }
                 }
                 if (array[0] == 2 || array[1] == 2 || array[2] == 2) {
-                    //Egg Roll
+                    //Egg roll
                     if (canBuy("Egg Roll", 5)) {
                         customerOrder[index++] = new EggRoll();
                         customerOrder[index++] = new EggRoll();
@@ -83,7 +85,7 @@ public class CateringCustomer extends Customer {
 
                 }
                 if (array[0] == 3 || array[1] == 3 || array[2] == 3) {
-
+                    //Pastry roll
                     if (canBuy("Pastry Roll", 5)) {
                         customerOrder[index++] = new PastryRoll();
                         customerOrder[index++] = new PastryRoll();
@@ -114,7 +116,7 @@ public class CateringCustomer extends Customer {
 
                 }
                 if (array[0] == 4 || array[1] == 4 || array[2] == 4) {
-
+                    //Sausage roll
                     if (canBuy("Sausage Roll", 5)) {
                         customerOrder[index++] = new SausageRoll();
                         customerOrder[index++] = new SausageRoll();
@@ -145,7 +147,7 @@ public class CateringCustomer extends Customer {
 
                 }
                 if (array[0] == 5 || array[1] == 5 || array[2] == 5) {
-
+                    //Jelly roll
                     if (canBuy("Jelly Roll", 5)) {
                         customerOrder[index++] = new JellyRoll();
                         customerOrder[index++] = new JellyRoll();
@@ -180,7 +182,7 @@ public class CateringCustomer extends Customer {
         }
     }
     public void print(){
-
+        //to calculate the total cost of the order
         printFun(index);
     }
 }
