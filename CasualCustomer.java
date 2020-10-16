@@ -7,7 +7,8 @@ public class CasualCustomer extends Customer {
 
 
     public void buy(int num) {
-
+        
+        //A casual customer will try to select a different roll type to make up their 1 to 3 roll order if the initial one they select is out for the day.  
         int currentNumOfRolls = Store.inventory.get("springRoll") + Store.inventory.get("eggRoll") + Store.inventory.get("pastryRoll") + Store.inventory.get("sausageRoll") + Store.inventory.get("jellyRoll");
 
         if (currentNumOfRolls >= 1) {
