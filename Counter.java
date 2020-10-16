@@ -15,6 +15,8 @@ public class Counter {
     }
 
 
+
+
     public void countSales(Customer customer){
 
         if (customer.getClass().getSimpleName() == "BusinessCustomer"){
@@ -35,7 +37,7 @@ public class Counter {
 
     }
 
-    public void printSale() {
+    public void printSales() {
         dailyTotal = businessSales + causalSales + cateringSales;
         if (dailyTotal != 0.0) {
             System.out.println("Daily total business customer sale :" + businessSales);
@@ -49,7 +51,7 @@ public class Counter {
             System.out.println("Daily total casual customer soldOut:" + casualSoldOut);
         }
         else{
-            System.out.println("The store closed for no inventory today.");
+            System.out.println("customerOrder");
         }
     }
 

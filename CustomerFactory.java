@@ -2,70 +2,80 @@ import java.util.Random;
 
 public class CustomerFactory{
 
-    public static String[] shuffleNames(String[] names) {
+
+    public static String nameDataSet() {
+
+        String[] array = {"Lindsay Byrne",
+                "Kymani Weston",
+                "Alysha Clements",
+                "Magnus Donovan",
+                "Damian Manning",
+                "Khushi Bishop",
+                "Saffa Redman",
+                "Peyton Allison",
+                "Gwen Ruiz",
+                "Baxter Villa",
+                "Anwen Hayden",
+                "Percy Solis",
+                "Steven Holding",
+                "Sharmin Livingston",
+                "Zeynep Correa",
+                "Tiana Olsen",
+                "Adele Donaldson",
+                "Glenn Acevedo",
+                "Juniper Mclellan",
+                "Wendy Cullen"};
+
         Random rand = new Random();
 
-        for(int i=0 ; i<names.length ; i++){
-            int randomIndexToSwap = rand.nextInt(names.length);
-            String temp = names[randomIndexToSwap];
-            names[randomIndexToSwap] = names[i];
-            names[i] = temp;
+        for (int i = 0; i < array.length; i++) {
+            int randomIndexToSwap = rand.nextInt(array.length);
+            String temp = array[randomIndexToSwap];
+            array[randomIndexToSwap] = array[i];
+            array[i] = temp;
         }
-        return names;
+        int i = rand.nextInt(array.length);
+        return array[i];
     }
 
-    public static Customer[] shuffleCustomers(Customer[] customers)
+
+    public Customer[] createCustomer()
     {
         Random rand = new Random();
-
-        for(int i=0 ; i<customers.length ; i++)
-        {
-            int randomIndexToSwap = rand.nextInt(customers.length);
-            Customer temp = customers[randomIndexToSwap];
-            customers[randomIndexToSwap] = customers[i];
-            customers[i] = temp;
-        }
-        return customers;
-    }
-
-    public static Customer[] createCustomer()
-    {
-        Random rand = new Random();
-
-        String[] possibleNames = {"Chad","Cathy","Karen","Susan","Mary","Wendy","Adam","Naomi","Boone","Jane","Ellie","Brandon","Amy","Oliver","Mason","Mia","James","Martin"};
-        int nameIndex = 0;
-        String[] shuffledNames = shuffleNames(possibleNames);
-
-
         int numCasual = rand.nextInt(12) + 1;
         int numBusiness = rand.nextInt(3) + 1;
         int numCatering = rand.nextInt(3) + 1;
-        int totalCustomers = numBusiness + numCasual + numCatering;
+        int totalCustomer = numBusiness + numCasual + numCatering;
 
-        Customer[] dailyCustomers = new Customer[totalCustomers];
-        int currentIndex = 0;
+        Customer[] customersInOneDay = new Customer[totalCustomer];
+        int index = 0;
 
         for(int i=0 ; i<numCasual ; i++)
         {
-            dailyCustomers[currentIndex] = new CasualCustomer(shuffledNames[nameIndex]);
-            nameIndex = nameIndex + 1;
-            currentIndex++;
+            customersInOneDay[index] = new CasualCustomer(nameDataSet());
+            index++;
         }
 
         for(int i=0 ; i<numBusiness ; i++)
         {
-            dailyCustomers[currentIndex] = new BusinessCustomer(shuffledNames[nameIndex]);
-            nameIndex++;
-            currentIndex++;
+            customersInOneDay[index] = new BusinessCustomer(nameDataSet());
+            index++;
         }
 
         for(int i=0 ; i<numCatering ; i++)
         {
-            dailyCustomers[currentIndex] = new CateringCustomer(shuffledNames[nameIndex]);
-            nameIndex++;
-            currentIndex++;
+            customersInOneDay[index] = new CateringCustomer(nameDataSet());
+            index++;
         }
 
-        return shuffleCustomers(dailyCustomers);
+        for(int i=0 ; i<customersInOneDay.length ; i++)
+        {
+            int randomIndexToSwap = rand.nextInt(customersInOneDay.length);
+            Customer temp = customersInOneDay[randomIndexToSwap];
+            customersInOneDay[randomIndexToSwap] = customersInOneDay[i];
+            customersInOneDay[i] = temp;
+        }
+
+        return customersInOneDay;
     }
 }

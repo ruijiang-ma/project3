@@ -6,13 +6,12 @@ public class Store {
     private final int LIMIT = 30;
     private Customer[] customers;
     public static HashMap<String, Integer> inventory = new HashMap<String, Integer>();
-    Boolean nothingLeft = false;
+    public static Boolean nothingLeft = false;
     Counter counter = new Counter();
-
 
     public Store(int day) {
 
-        System.out.println("******** Welcome to our 4448 Roll store ********\n");
+        System.out.println("******** Welcome to our 4448 Roll store. ********\n");
         inventory.put("springRoll", LIMIT);
         inventory.put("eggRoll", LIMIT);
         inventory.put("pastryRoll",LIMIT);
@@ -21,18 +20,19 @@ public class Store {
 
         for(int i=1 ; i <= day ; i++) {
 
-            System.out.println("Today is Day " + i + ".");
+            System.out.println("******** Today is Day " + i + ". ********\n");
             this.setInventory();
             counter.printInventory();
             counter.resetDaily();
 
-            customers = CustomerFactory.createCustomer();
+            CustomerFactory factory = new CustomerFactory();
+            customers = factory.createCustomer();
             this.customerSimulator();
 
-            counter.printSale();
+            counter.printSales();
             counter.printInventory();
 
-            System.out.println("End of Day " + i + ".");
+            System.out.println("\n******** End of Day " + i + ". ********\n");
         }
     }
 
@@ -62,69 +62,59 @@ public class Store {
 
     public boolean nothingLeft() {
 
-        if (Store.inventory.get("springRoll") == 0 && Store.inventory.get("eggRoll") ==0 && Store.inventory.get("pastryRoll") ==0 && Store.inventory.get("sausageRoll") ==0 && Store.inventory.get("jellyRoll") == 0)
+        if (inventory.get("springRoll") == 0 && inventory.get("eggRoll") ==0 && inventory.get("pastryRoll") ==0 && inventory.get("sausageRoll") ==0 && inventory.get("jellyRoll") == 0)
         { this.nothingLeft = true; }
         return this.nothingLeft;
 
     }
 
-    public void eggRunOut(){
+    public void checkWhichRunOut(){
+
         if (Store.inventory.get("eggRoll") == 0 ){
-            System.out.println("Egg Roll run out!");
+            System.out.println("Egg Rolls ran out!");
         }
-    }
-    public void springRunOut(){
         if (Store.inventory.get("springRoll") == 0 ){
-            System.out.println("Spring Roll run out!");
+            System.out.println("Spring Rolls ran out!");
         }
-    }
-    public void jellyRunOut(){
         if (Store.inventory.get("jellyRoll") == 0 ){
-            System.out.println("Jelly Roll run out!");
+            System.out.println("Jelly Rolls ran out!");
         }
-    }
-    public void sausageRunOut(){
         if (Store.inventory.get("sausageRoll") == 0 ){
-            System.out.println("Sausage Roll run out!");
+            System.out.println("Sausage Rolls ran out!");
         }
-    }
-    public void pastryRunOut(){
+
         if (Store.inventory.get("pastryRoll") == 0 ){
-            System.out.println("Pastry Roll run out!");
+            System.out.println("Pastry Rolls ran out!");
         }
     }
-
-
 
     public void customerSimulator() {
         Random rand = new Random();
-        int quantity = 0;
+        int num = 0;
         for(int i=0; i < customers.length; i++)
         {
-            if (!this.nothingLeft()) {
+            if (!nothingLeft()) {
 
                 if (customers[i].getClass().getSimpleName().equals("CasualCustomer")) {
-                    quantity = rand.nextInt(2) + 1;
+                    num = rand.nextInt(3) +1;
                 } else if (customers[i].getClass().getSimpleName().equals("CateringCustomer")) {
-                    quantity = 15;
+                    num = 15;
                 } else if (customers[i].getClass().getSimpleName().equals("BusinessCustomer")) {
-                    quantity = 10;
+                    num = 10;
                 }
 
-                System.out.println(customers[i].getName() + " the " + customers[i].getClass().getSimpleName() + " entered the store and is looking to buy " + quantity + " roll(s).");
-                customers[i].purchaseRolls(quantity);
-                this.jellyRunOut();
-                this.eggRunOut();
-                this.sausageRunOut();
-                this.pastryRunOut();
-                this.springRunOut();
-                
+                System.out.println(customers[i].getName() + " the " + customers[i].getClass().getSimpleName() + " entered the store and want to buy " + num + " roll(s).");
+                customers[i].buy(num);
+                this.checkWhichRunOut();
+
                 customers[i].print();
                 
                 counter.countSales(customers[i]);
             }
+
             else {
-                System.out.println("We sold out! Come back the next day!");
+                System.out.println("Everything is sold out! Come back the next day!");
+                this.nothingLeft = false;
                 break;
             }
 
