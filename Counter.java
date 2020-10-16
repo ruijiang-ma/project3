@@ -71,6 +71,7 @@ public class Counter {
 
     }
 
+    //Summarize the daily sales and soldout of each type of customers.
     public void printSales() {
         System.out.println("---------------- DAILY SUMMARY: ----------------");
         dailyTotal = businessSales + causalSales + cateringSales;
@@ -86,6 +87,7 @@ public class Counter {
 
     }
 
+    //Summarize the inventory of each type of customers.
     public void printInventory() {
         System.out.println("\n-------------------------------- INVENTORY SUMMARY: --------------------------------");
         System.out.println("Spring roll stock level: " + Store.inventory.get("springRoll")+".");
@@ -97,6 +99,7 @@ public class Counter {
         //System.out.println("\n****************************************************************");
     }
 
+    //Summarize the total sales and soldout.
     public void printAllTimeSale() {
         
         allTimeTotalSales = allTimeBusinessSales + allTimeCateringSales + allTimeCausalSales;
