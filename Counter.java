@@ -1,5 +1,7 @@
 public class Counter {
-
+    
+    //The Counter class is our observer
+    //The Counter class keeps other objects informed about the number each type of rolls selled by each type of customers. 
     int businessSoldOut = 0, cateringSoldOut = 0, casualSoldOut = 0, allTimeSoldOut = 0;
 
     double businessSales = 0.0,
@@ -34,7 +36,8 @@ public class Counter {
         totalNumPastry += customer.numPastry;
         totalNumSausage += customer.numSausage;
         totalNumSpring += customer.numSpr;
-
+        
+        //Business customer
         if (customer.getClass().getSimpleName() == "BusinessCustomer"){
             
             businessSales += customer.getTotalCost();
@@ -44,7 +47,8 @@ public class Counter {
             allTimeSoldOut += customer.getSoldOut();
 
         }
-
+        
+        //Casual customer
         if (customer.getClass().getSimpleName() == "CasualCustomer"){
             
             causalSales += customer.getTotalCost();
@@ -54,7 +58,7 @@ public class Counter {
             allTimeSoldOut += customer.getSoldOut();
         }
 
-
+        //Catering customer
         if (customer.getClass().getSimpleName() == "CateringCustomer"){
             
             cateringSales += customer.getTotalCost();
