@@ -6,7 +6,8 @@ public class CateringCustomer extends Customer {
 
 
     public void buy(int num) {
-
+        
+        // To check if there are enough rolls for catering customers.
         //Catering customers will buy 5 rolls of 3 different types (15 total, type determined randomly). 
         //A catering customer will take any number of available rolls of any available types up to a total of 15, if their original order cannot be placed. 
         int currentNumOfRolls = Store.inventory.get("springRoll") + Store.inventory.get("eggRoll") + Store.inventory.get("pastryRoll") + Store.inventory.get("sausageRoll") + Store.inventory.get("jellyRoll");
