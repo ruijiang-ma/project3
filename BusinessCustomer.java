@@ -3,8 +3,8 @@ public class BusinessCustomer extends Customer {
     BusinessCustomer(String n){
         this.name = n;
     }
-// Check if there are enough rolls for business customers.
-//A business customer will only take their order if it is filled exactly as requested, otherwise, they will not make a purchase.
+    // Check if there are enough rolls for business customers.
+    //A business customer will only take their order if it is filled exactly as requested, otherwise, they will not make a purchase.
     private Boolean ableToAccommodate() {
 
         Boolean able = true;
@@ -30,7 +30,7 @@ public class BusinessCustomer extends Customer {
             customerOrder[1] = new SpringRoll();
 
 
-            Store.inventory.put("springRoll",Store.inventory.get("springRoll") -2);
+            Store.inventory.put("springRoll",Store.inventory.get("springRoll") - 2);
 
             customerOrder[2] = new EggRoll();
             customerOrder[3] = new EggRoll();
@@ -43,11 +43,11 @@ public class BusinessCustomer extends Customer {
             customerOrder[6] = new SausageRoll();
             customerOrder[7] = new SausageRoll();
 
-            Store.inventory.put("sausageRoll",Store.inventory.get("sausageRoll")-2);
+            Store.inventory.put("sausageRoll",Store.inventory.get("sausageRoll") - 2);
 
             customerOrder[8] = new JellyRoll();
             customerOrder[9] = new JellyRoll();
-            Store.inventory.put("jellyRoll",Store.inventory.get("jellyRoll")-2);
+            Store.inventory.put("jellyRoll",Store.inventory.get("jellyRoll") - 2);
 
         }
 
@@ -64,7 +64,7 @@ public class BusinessCustomer extends Customer {
                 if (customerOrder[i].getName() == "Sausage Roll") { this.numSausage+=1; }
                 if (customerOrder[i].getName() == "Spring Roll") { this.numSpr+=1; }
 
-
+                //Calculate the total cost of the order
                 totalCost+=customerOrder[i].getPrice();
                 String str = String.format("%.02f", customerOrder[i].getPrice());
                 System.out.println(this.getName() + " the " + this.getClass().getSimpleName() + " purchased a " + customerOrder[i].getName() + " with "
