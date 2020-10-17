@@ -1,4 +1,5 @@
 public class RollFactory implements Factory{
+    //Generate different rolls based on the customer type.
     public static Roll createRoll(String type)
     {
         if (type == null || type.isEmpty())
