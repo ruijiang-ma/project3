@@ -1,7 +1,7 @@
 import java.util.Random;
 
+//We are using the Factory Design Pattern here.
 public class CustomerFactory{
-
 
     public static String nameDataSet() {
 
@@ -38,7 +38,7 @@ public class CustomerFactory{
         return array[i];
     }
 
-
+    ////Generate different customers based on the customer type.
     public static Customer[] createCustomer()
     {
         Random rand = new Random();
