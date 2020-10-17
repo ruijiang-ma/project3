@@ -62,6 +62,7 @@ public class Store {
         }
     }
 
+     //To check if there is anything left.
     public boolean nothingLeft() {
 
         if (inventory.get("springRoll") == 0 && inventory.get("eggRoll") ==0 && inventory.get("pastryRoll") ==0 && inventory.get("sausageRoll") ==0 && inventory.get("jellyRoll") == 0)
@@ -70,6 +71,7 @@ public class Store {
 
     }
 
+    //To check which type of roll has ran out.
     public void checkWhichRunOut(){
 
         if (Store.inventory.get("eggRoll") == 0 ){
