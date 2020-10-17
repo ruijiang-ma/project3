@@ -6,7 +6,4 @@ public class EggRoll extends Roll {
         this.saucePrice = 3.00;
         this.toppingPrice = 2.50;
     }
-
-
-
 }
