@@ -6,12 +6,19 @@ public class Main {
 
 
         JUnitTest test = new JUnitTest();
-        test.test_customer_factory();
+
+        test.testCustomerFactory();
         test.testAdd();
-        test.getNameTest();
+        test.testGetName();
+        test.testEggRoll();
+        test.testCounter();
+        test.testFactory();
+        test.testBusinessCustomr();
+        test.testPastryRoll();
+
 
         //Ask users to input a value and read the value.
-        System.out.println("How many days would you like the Roll Store Simulator to run?");
+        System.out.println("\nHello, and welcome! How many days would you like the Roll Store Simulator to run?");
         Scanner in = new Scanner(System.in);
         int days = in.nextInt();
         System.out.println();
