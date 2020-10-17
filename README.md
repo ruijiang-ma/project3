@@ -1,4 +1,4 @@
-## OOAD Project 3 
+## OOAD Project 3 - Roll Store Simulator
 #### Team members:
 Ruijiang Ma chma2866@colorado.edu</br>Tongxin Zhu tozh3775@colorado.edu
 #### Language and environment:
