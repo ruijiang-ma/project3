@@ -38,7 +38,7 @@ public class CustomerFactory implements Factory{
         return array[i];
     }
 
-    ////Generate different customers based on the customer type.
+    //Generate different customers based on the customer type.
     public static Customer[] createCustomer()
     {
         Random rand = new Random();
