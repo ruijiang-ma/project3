@@ -27,6 +27,7 @@ public abstract class Roll {
         return name;
     }
 
+    //Useing Decorator Design Pattern for adding extras.
     public int getSauceNum() { return sauceNum; }
 
     public int getToppingNum() { return toppingNum; }
