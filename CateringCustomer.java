@@ -20,37 +20,37 @@ public class CateringCustomer extends Customer {
                     //Spring roll
                     if (canBuy("Spring Roll", 5)) {
                         
-                        customerOrder[index++] = new SpringRoll();
-                        customerOrder[index++] = new SpringRoll();
-                        customerOrder[index++] = new SpringRoll();
-                        customerOrder[index++] = new SpringRoll();
-                        customerOrder[index++] = new SpringRoll();
+                        customerOrder[index++] = RollFactory.createRoll("Spring Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Spring Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Spring Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Spring Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Spring Roll");
 
                         Store.inventory.put("springRoll", Store.inventory.get("springRoll") - 5);
                     } else if (canBuy("Spring Roll", 4)) {
 
-                        customerOrder[index++] = new SpringRoll();
-                        customerOrder[index++] = new SpringRoll();
-                        customerOrder[index++] = new SpringRoll();
-                        customerOrder[index++] = new SpringRoll();
+                        customerOrder[index++] = RollFactory.createRoll("Spring Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Spring Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Spring Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Spring Roll");
 
                         Store.inventory.put("springRoll", Store.inventory.get("springRoll") - 4);
                     } else if (canBuy("Spring Roll", 3)) {
 
-                        customerOrder[index++] = new SpringRoll();
-                        customerOrder[index++] = new SpringRoll();
-                        customerOrder[index++] = new SpringRoll();
+                        customerOrder[index++] = RollFactory.createRoll("Spring Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Spring Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Spring Roll");
 
                         Store.inventory.put("springRoll", Store.inventory.get("springRoll") - 3);
                     } else if (canBuy("Spring Roll", 2)) {
 
-                        customerOrder[index++] = new SpringRoll();
-                        customerOrder[index++] = new SpringRoll();
+                        customerOrder[index++] = RollFactory.createRoll("Spring Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Spring Roll");
 
                         Store.inventory.put("springRoll", Store.inventory.get("springRoll") - 2);
                     } else if (canBuy("Spring Roll", 1)) {
 
-                        customerOrder[index++] = new SpringRoll();
+                        customerOrder[index++] = RollFactory.createRoll("Spring Roll");
 
                         Store.inventory.put("springRoll", Store.inventory.get("springRoll") - 1);
                     }
@@ -58,29 +58,29 @@ public class CateringCustomer extends Customer {
                 if (array[0] == 2 || array[1] == 2 || array[2] == 2) {
                     //Egg roll
                     if (canBuy("Egg Roll", 5)) {
-                        customerOrder[index++] = new EggRoll();
-                        customerOrder[index++] = new EggRoll();
-                        customerOrder[index++] = new EggRoll();
-                        customerOrder[index++] = new EggRoll();
-                        customerOrder[index++] = new EggRoll();
+                        customerOrder[index++] = RollFactory.createRoll("Egg Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Egg Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Egg Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Egg Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Egg Roll");
                         Store.inventory.put("eggRoll", Store.inventory.get("eggRoll") - 5);
                     } else if (canBuy("Egg Roll", 4)) {
-                        customerOrder[index++] = new EggRoll();
-                        customerOrder[index++] = new EggRoll();
-                        customerOrder[index++] = new EggRoll();
-                        customerOrder[index++] = new EggRoll();
+                        customerOrder[index++] = RollFactory.createRoll("Egg Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Egg Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Egg Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Egg Roll");
                         Store.inventory.put("eggRoll", Store.inventory.get("eggRoll") - 4);
                     } else if (canBuy("Egg Roll", 3)) {
-                        customerOrder[index++] = new EggRoll();
-                        customerOrder[index++] = new EggRoll();
-                        customerOrder[index++] = new EggRoll();
+                        customerOrder[index++] = RollFactory.createRoll("Egg Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Egg Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Egg Roll");
                         Store.inventory.put("eggRoll", Store.inventory.get("eggRoll") - 3);
                     } else if (canBuy("Egg Roll", 2)) {
-                        customerOrder[index++] = new EggRoll();
-                        customerOrder[index++] = new EggRoll();
+                        customerOrder[index++] = RollFactory.createRoll("Egg Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Egg Roll");
                         Store.inventory.put("eggRoll", Store.inventory.get("eggRoll") - 2);
                     } else if (canBuy("Egg Roll", 1)) {
-                        customerOrder[index++] = new EggRoll();
+                        customerOrder[index++] = RollFactory.createRoll("Egg Roll");
                         Store.inventory.put("eggRoll", Store.inventory.get("eggRoll") - 1);
                     }
 
@@ -88,30 +88,30 @@ public class CateringCustomer extends Customer {
                 if (array[0] == 3 || array[1] == 3 || array[2] == 3) {
                     //Pastry roll
                     if (canBuy("Pastry Roll", 5)) {
-                        customerOrder[index++] = new PastryRoll();
-                        customerOrder[index++] = new PastryRoll();
-                        customerOrder[index++] = new PastryRoll();
-                        customerOrder[index++] = new PastryRoll();
-                        customerOrder[index++] = new PastryRoll();
+                        customerOrder[index++] = RollFactory.createRoll("Pastry Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Pastry Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Pastry Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Pastry Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Pastry Roll");
 
                         Store.inventory.put("pastryRoll", Store.inventory.get("pastryRoll") - 5);
                     } else if (canBuy("Pastry Roll", 4)) {
-                        customerOrder[index++] = new PastryRoll();
-                        customerOrder[index++] = new PastryRoll();
-                        customerOrder[index++] = new PastryRoll();
-                        customerOrder[index++] = new PastryRoll();
+                        customerOrder[index++] = RollFactory.createRoll("Pastry Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Pastry Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Pastry Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Pastry Roll");
                         Store.inventory.put("pastryRoll", Store.inventory.get("pastryRoll") - 4);
                     } else if (canBuy("Pastry Roll", 3)) {
-                        customerOrder[index++] = new PastryRoll();
-                        customerOrder[index++] = new PastryRoll();
-                        customerOrder[index++] = new PastryRoll();
+                        customerOrder[index++] = RollFactory.createRoll("Pastry Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Pastry Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Pastry Roll");
                         Store.inventory.put("pastryRoll", Store.inventory.get("pastryRoll") - 3);
                     } else if (canBuy("Pastry Roll", 2)) {
-                        customerOrder[index++] = new PastryRoll();
-                        customerOrder[index++] = new PastryRoll();
+                        customerOrder[index++] = RollFactory.createRoll("Pastry Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Pastry Roll");
                         Store.inventory.put("pastryRoll", Store.inventory.get("pastryRoll") - 2);
                     } else if (canBuy("Pastry Roll", 1)) {
-                        customerOrder[index++] = new PastryRoll();
+                        customerOrder[index++] = RollFactory.createRoll("Pastry Roll");
                         Store.inventory.put("pastryRoll", Store.inventory.get("pastryRoll") - 1);
                     }
 
@@ -119,30 +119,30 @@ public class CateringCustomer extends Customer {
                 if (array[0] == 4 || array[1] == 4 || array[2] == 4) {
                     //Sausage roll
                     if (canBuy("Sausage Roll", 5)) {
-                        customerOrder[index++] = new SausageRoll();
-                        customerOrder[index++] = new SausageRoll();
-                        customerOrder[index++] = new SausageRoll();
-                        customerOrder[index++] = new SausageRoll();
-                        customerOrder[index++] = new SausageRoll();
+                        customerOrder[index++] = RollFactory.createRoll("Sausage Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Sausage Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Sausage Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Sausage Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Sausage Roll");
                         Store.inventory.put("sausageRoll", Store.inventory.get("sausageRoll") - 5);
                     } else if (canBuy("Sausage Roll", 4)) {
-                        customerOrder[index++] = new SausageRoll();
-                        customerOrder[index++] = new SausageRoll();
-                        customerOrder[index++] = new SausageRoll();
-                        customerOrder[index++] = new SausageRoll();
+                        customerOrder[index++] = RollFactory.createRoll("Sausage Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Sausage Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Sausage Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Sausage Roll");
                         Store.inventory.put("sausageRoll", Store.inventory.get("sausageRoll") - 4);
                     } else if (canBuy("Sausage Roll", 3)) {
-                        customerOrder[index++] = new SausageRoll();
-                        customerOrder[index++] = new SausageRoll();
-                        customerOrder[index++] = new SausageRoll();
+                        customerOrder[index++] = RollFactory.createRoll("Sausage Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Sausage Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Sausage Roll");
                         Store.inventory.put("sausageRoll", Store.inventory.get("sausageRoll") - 3);
                     }
                     else if (canBuy("Sausage Roll", 2)) {
-                        customerOrder[index++] = new SausageRoll();
-                        customerOrder[index++] = new SausageRoll();
+                        customerOrder[index++] = RollFactory.createRoll("Sausage Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Sausage Roll");
                         Store.inventory.put("sausageRoll", Store.inventory.get("sausageRoll") - 2);
                     } else if (canBuy("Sausage Roll", 1)) {
-                        customerOrder[index++] = new SausageRoll();
+                        customerOrder[index++] = RollFactory.createRoll("Sausage Roll");
                         Store.inventory.put("sausageRoll", Store.inventory.get("sausageRoll") - 1);
                     }
 
@@ -150,29 +150,29 @@ public class CateringCustomer extends Customer {
                 if (array[0] == 5 || array[1] == 5 || array[2] == 5) {
                     //Jelly roll
                     if (canBuy("Jelly Roll", 5)) {
-                        customerOrder[index++] = new JellyRoll();
-                        customerOrder[index++] = new JellyRoll();
-                        customerOrder[index++] = new JellyRoll();
-                        customerOrder[index++] = new JellyRoll();
-                        customerOrder[index++] = new JellyRoll();
+                        customerOrder[index++] = RollFactory.createRoll("Jelly Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Jelly Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Jelly Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Jelly Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Jelly Roll");
                         Store.inventory.put("jellyRoll", Store.inventory.get("jellyRoll") - 5);
                     } else if (canBuy("Jelly Roll", 4)) {
-                        customerOrder[index++] = new JellyRoll();
-                        customerOrder[index++] = new JellyRoll();
-                        customerOrder[index++] = new JellyRoll();
-                        customerOrder[index++] = new JellyRoll();
+                        customerOrder[index++] = RollFactory.createRoll("Jelly Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Jelly Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Jelly Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Jelly Roll");
                         Store.inventory.put("jellyRoll", Store.inventory.get("jellyRoll") - 4);
                     } else if (canBuy("Jelly Roll", 3)) {
-                        customerOrder[index++] = new JellyRoll();
-                        customerOrder[index++] = new JellyRoll();
-                        customerOrder[index++] = new JellyRoll();
+                        customerOrder[index++] = RollFactory.createRoll("Jelly Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Jelly Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Jelly Roll");
                         Store.inventory.put("jellyRoll", Store.inventory.get("jellyRoll") - 3);
                     } else if (canBuy("Jelly Roll", 2)) {
-                        customerOrder[index++] = new JellyRoll();
-                        customerOrder[index++] = new JellyRoll();
+                        customerOrder[index++] = RollFactory.createRoll("Jelly Roll");
+                        customerOrder[index++] = RollFactory.createRoll("Jelly Roll");
                         Store.inventory.put("jellyRoll", Store.inventory.get("jellyRoll") - 2);
                     } else if (canBuy("Jelly Roll", 1)) {
-                        customerOrder[index++] = new JellyRoll();
+                        customerOrder[index++] = RollFactory.createRoll("Jelly Roll");
                         Store.inventory.put("jellyRoll", Store.inventory.get("jellyRoll") - 1);
                     }
                 }

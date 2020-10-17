@@ -22,7 +22,7 @@ public class CasualCustomer extends Customer {
                 //Spring roll
                 if (canBuy("Spring Roll", 1) && index < num) {
 
-                    customerOrder[index++] = new SpringRoll();
+                    customerOrder[index++] = RollFactory.createRoll("Spring Roll");
 
                     Store.inventory.put("springRoll", Store.inventory.get("springRoll") - 1);
                 }
@@ -30,7 +30,7 @@ public class CasualCustomer extends Customer {
             if (array[0] == 2 || array[1] == 2 || array[2] == 2) {
                 //Egg roll
                 if (canBuy("Egg Roll", 1) && index < num) {
-                    customerOrder[index++] = new EggRoll();
+                    customerOrder[index++] = RollFactory.createRoll("Egg Roll");
                     Store.inventory.put("eggRoll", Store.inventory.get("eggRoll") - 1);
                 }
 
@@ -38,7 +38,7 @@ public class CasualCustomer extends Customer {
             if (array[0] == 3 || array[1] == 3 || array[2] == 3) {
                 //Pastry roll
                 if (canBuy("Pastry Roll", 1) && index < num) {
-                    customerOrder[index++] = new PastryRoll();
+                    customerOrder[index++] = RollFactory.createRoll("Pastry Roll");
                     Store.inventory.put("pastryRoll", Store.inventory.get("pastryRoll") - 1);
                     rollsBought += 1;
                 }
@@ -47,7 +47,7 @@ public class CasualCustomer extends Customer {
             if (array[0] == 4 || array[1] == 4 || array[2] == 4) {
                 //Sausage roll
                 if (canBuy("Sausage Roll", 1) && index < num) {
-                    customerOrder[index++] = new SausageRoll();
+                    customerOrder[index++] = RollFactory.createRoll("Sausage Roll");
                     Store.inventory.put("sausageRoll", Store.inventory.get("sausageRoll") - 1);
                     rollsBought += 1;
                 }
@@ -56,7 +56,7 @@ public class CasualCustomer extends Customer {
             if (array[0] == 5 || array[1] == 5 || array[2] == 5) {
                 //Jelly roll
                 if (canBuy("Jelly Roll", 1) && index < num) {
-                    customerOrder[index++] = new JellyRoll();
+                    customerOrder[index++] = RollFactory.createRoll("Jelly Roll");
                     Store.inventory.put("jellyRoll", Store.inventory.get("jellyRoll") - 1);
                     rollsBought += 1;
                 }

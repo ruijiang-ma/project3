@@ -29,28 +29,28 @@ public class BusinessCustomer extends Customer {
         else if(ableToAccommodate()) {
             
             //Spring roll
-            customerOrder[0] = new SpringRoll();
-            customerOrder[1] = new SpringRoll();
+            customerOrder[0] = RollFactory.createRoll("Spring Roll");
+            customerOrder[1] = RollFactory.createRoll("Spring Roll");
             Store.inventory.put("springRoll",Store.inventory.get("springRoll") - 2);
             
             //Egg roll
-            customerOrder[2] = new EggRoll();
-            customerOrder[3] = new EggRoll();
+            customerOrder[2] = RollFactory.createRoll("Egg Roll");
+            customerOrder[3] = RollFactory.createRoll("Egg Roll");
             Store.inventory.put("eggRoll",Store.inventory.get("eggRoll") - 2);
             
             //Pastry roll
-            customerOrder[4] = new PastryRoll();
-            customerOrder[5] = new PastryRoll();
+            customerOrder[4] = RollFactory.createRoll("Pastry Roll");
+            customerOrder[5] = RollFactory.createRoll("Pastry Roll");
             Store.inventory.put("pastryRoll",Store.inventory.get("pastryRoll") - 2);
             
             //Sausage roll
-            customerOrder[6] = new SausageRoll();
-            customerOrder[7] = new SausageRoll();
+            customerOrder[6] = RollFactory.createRoll("Sausage Roll");
+            customerOrder[7] = RollFactory.createRoll("Sausage Roll");
             Store.inventory.put("sausageRoll",Store.inventory.get("sausageRoll") - 2);
             
             //jelly roll
-            customerOrder[8] = new JellyRoll();
-            customerOrder[9] = new JellyRoll();
+            customerOrder[8] = RollFactory.createRoll("Jelly Roll");
+            customerOrder[9] = RollFactory.createRoll("Jelly Roll");
             Store.inventory.put("jellyRoll",Store.inventory.get("jellyRoll") - 2);
 
         }

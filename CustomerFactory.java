@@ -1,7 +1,7 @@
 import java.util.Random;
 
 //We are using the Factory Design Pattern here.
-public class CustomerFactory{
+public class CustomerFactory implements Factory{
 
     public static String nameDataSet() {
 
